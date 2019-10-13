@@ -1,0 +1,29 @@
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+body {
+  background: rgb(3, 3, 3);
+}
+
+.row1 > h6 {
+  color: white;
+  font-size: 46px;
+  font-display: center;
+  font-family: "Fredoka One", cursive;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.card > img {
+  border: none;
+  height: auto;
+  margin-top: 0;
+}
+
+.container {
+  margin-bottom: 80px;
+}
