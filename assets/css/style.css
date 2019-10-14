@@ -1,27 +1,86 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
 body {
   background-size: cover;
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/background.jpg");
 }
-#box {
-  margin-top: 90px;
+#playerDiv {
+  color: white;
 }
-.single_box {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 8px;
-  transition: 0.6s;
-  border: 1px white solid;
+
+#globalMsg {
+  margin-top: 200px;
 }
-.starwars {
-  width: 100%;
-  margin: 0;
+#playerHealthDiv {
+  color: white;
+}
+#defendersLeftDiv {
+  margin: 0 auto;
   padding: 0;
 }
-.main_text > h3 {
+
+.card-img-top {
+  border-radius: 5px;
+  border: solid white 5px;
+  min-width: 150px;
+}
+img {
+  min-height: auto;
+  min-width: auto;
+  border-radius: 5px;
+}
+
+.col-12 {
+  bottom: 0;
+  margin-bottom: 20px;
+}
+
+#defenderDiv {
+  color: white;
+}
+
+#game {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#selectionMenu {
+  text-align: center;
+}
+#defenderHealthDiv {
+  color: white;
+}
+.card-deck {
+  margin-left: 60px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: 0.6s;
+}
+.card {
+  animation: shadow-pulse 1s infinite;
+}
+.card:hover {
+  opacity: 0.9;
+}
+.img-fluid {
+  width: 50%;
+  padding: 20px;
+  align-items: center;
+  margin: 0;
+}
+
+h3 {
   text-align: center;
   color: white;
-  padding: 20px;
+  padding: 10px;
   font-family: "Fredoka One", cursive;
   animation: animate 1s linear infinite;
   width: 100%;
@@ -38,60 +97,37 @@ body {
   }
 }
 
-.single_box .img_box {
-  top: 0;
-  left: 0;
-  transition: 0.6s;
-  width: 100%;
-  height: 100%;
-}
-
-.img_box img {
-  top: 0;
-  left: 0;
-  transition: 0.6s;
-  width: 100%;
-  height: 100%;
-}
-
-.single_box:hover .img_box {
-  opacity: 0.9;
-}
-.container {
-  margin-bottom: 0;
-  margin-bottom: 50px;
-}
-/*Second screen with actual fight:*/
-
-.rowTwo {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
 #saber {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 130px;
+
   margin-left: 45px;
 }
 #attackBtn {
   animation: shadow-pulse 1s infinite;
 }
 
+#msg {
+  color: white;
+}
 @keyframes shadow-pulse {
   0% {
     box-shadow: 0 0 0 0px white;
   }
   100% {
-    box-shadow: 0 0 0 3px red;
+    box-shadow: 0 0 0 3px rgb(233, 27, 61);
   }
 }
-.container-fluid {
+.container {
+  margin-bottom: 50px;
 }
 
-.enemies_text > h3 {
+.row {
+  margin-bottom: -120px;
+  display: flex;
+  flex-direction: row;
   text-align: center;
-  color: white;
-  padding: 40px;
-  font-family: "Fredoka One", cursive;
-  animation: animate 1s linear infinite;
-  width: 100%;
 }
