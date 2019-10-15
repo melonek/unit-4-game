@@ -10,9 +10,6 @@ body {
   background-image: url("/assets/images/background1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100%;
-  max-height: 100vh;
-  background: black;
 }
 
 #playerDiv {
