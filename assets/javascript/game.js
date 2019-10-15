@@ -42,7 +42,7 @@ function initCharacters() {
     150,
     20,
     20,
-    "./assets/images/luke.jpg"
+    "./assets/images/Luke.jpg"
   );
   var vader = new Character(
     "Darth Vader",
@@ -56,7 +56,7 @@ function initCharacters() {
     180,
     40,
     7,
-    "./assets/images/qui.jpg"
+    "./assets/images/Qui.jpg"
   );
   var yoda = new Character("Yoda", 170, 40, 20, "./assets/images/yoda.jpg");
   charArray.push(luke, vader, qui, yoda);
