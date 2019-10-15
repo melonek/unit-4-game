@@ -1,9 +1,9 @@
-var baseAttack = 0;
 var player;
 var defender;
+var baseAttack = 0;
 var charArray = [];
-var playerSelected = false;
-var defenderSelected = false;
+var playerReady = false;
+var defenderReady = false;
 
 function Character(name, hp, ap, counter, pic) {
   this.name = name;
@@ -20,7 +20,7 @@ Character.prototype.increaseAttack = function() {
 Character.prototype.attack = function(Obj) {
   Obj.healthPoints -= this.attackPower;
   $("#msg").html(
-    "You attacked " + Obj.name + "for " + this.attackPower + " damage points."
+    "You attacked " + Obj.name + " for " + this.attackPower + " damage points."
   );
   this.increaseAttack();
 };
@@ -120,12 +120,12 @@ function changeView() {
 }
 
 $(document).on("click", "img", function() {
-  if (playerSelected && !defenderSelected && this.id != player.name) {
+  if (playerReady && !defenderReady && this.id != player.name) {
     for (var j = 0; j < charArray.length; j++) {
       if (charArray[j].name == this.id) {
         defender = charArray[j];
         charArray.splice(j, 1);
-        defenderSelected = true;
+        defenderReady = true;
         $("#msg").html("Click the button to attack!");
       }
     }
@@ -134,7 +134,7 @@ $(document).on("click", "img", function() {
     $("#defenderHealthDiv").append("HP: " + defender.healthPoints);
   }
 
-  if (!playerSelected) {
+  if (!playerReady) {
     for (var i = 0; i < charArray.length; i++) {
       if (charArray[i].name == this.id) {
         player = charArray[i];
@@ -144,7 +144,7 @@ $(document).on("click", "img", function() {
         });
         setBaseAttack(player);
         charArray.splice(i, 1);
-        playerSelected = true;
+        playerReady = true;
         changeView();
         $("#msg").html("Pick an enemy to fight!");
       }
@@ -157,7 +157,7 @@ $(document).on("click", "img", function() {
 });
 
 $(document).on("click", "#attackBtn", function() {
-  if (playerSelected && defenderSelected) {
+  if (playerReady && defenderReady) {
     if (isAlive(player) && isAlive(defender)) {
       player.attack(defender);
       defender.counterAttack(player);
@@ -183,7 +183,7 @@ $(document).on("click", "#attackBtn", function() {
         .remove();
       $("#defenderDiv").html("");
       $("#defenderHealthDiv").html("");
-      defenderSelected = false;
+      defenderReady = false;
       if (isWinner()) {
         $("#fight").hide();
         $("#globalMsg").show();
