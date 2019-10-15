@@ -51,15 +51,15 @@ function initCharacters() {
     12,
     "./assets/images/vader.jpg"
   );
-  var obi = new Character(
+  var qui = new Character(
     "Qui-Gon Jinn",
     180,
     40,
     7,
     "./assets/images/qui.jpg"
   );
-  var chew = new Character("Yoda", 170, 40, 20, "./assets/images/yoda.jpg");
-  charArray.push(luke, vader, obi, chew);
+  var yoda = new Character("Yoda", 170, 40, 20, "./assets/images/yoda.jpg");
+  charArray.push(luke, vader, qui, yoda);
 }
 
 function setBaseAttack(Obj) {
